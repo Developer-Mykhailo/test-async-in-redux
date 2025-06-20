@@ -9,7 +9,7 @@ function App() {
     <Container>
       <h1>Phonebook</h1>
       <ContactForm />
-      {/* <SearchBox /> */}
+      <SearchBox />
       <ContactList />
     </Container>
   );

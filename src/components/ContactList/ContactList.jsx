@@ -3,18 +3,25 @@ import Contact from "../Contact/Contact";
 import s from "./ContactList.module.css";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contactsOps";
+import {
+  selectError,
+  selectFilteredContacts,
+  selectLoading,
+} from "../../redux/contactsSlice";
 
 const ContactList = () => {
-  // const contacts = useSelector((state) => state.contacts.items);
-  // const filter = useSelector((state) => state.filters.name);
+  //
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
+
+  // const contacts = useSelector(selectContacts);
+  // const filter = useSelector(selectNameFilter);
 
   // const visibleContacts = contacts.filter((contact) =>
   //   contact.name.toLowerCase().includes(filter.toLowerCase())
   // );
-
-  const loading = useSelector((state) => state.contacts.contacts.loading);
-  const contacts = useSelector((state) => state.contacts.contacts.items);
-  const error = useSelector((state) => state.contacts.contacts.error);
+  // const visibleContacts = useSelector(selectFilteredContacts);
+  const contacts = useSelector(selectFilteredContacts);
 
   const dispatch = useDispatch();
 
